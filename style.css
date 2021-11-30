@@ -18,6 +18,24 @@
 .container {
     display: flex;
     height: 70vh;
+    justify-content: space-around;
+    align-items: center;
+}
+.score{
+    font-size: 2rem;
+}
+.left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.right {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+img {
+    min-width: 25rem;
 }
 
 
