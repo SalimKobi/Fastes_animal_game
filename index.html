@@ -1,68 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
     <title>Game</title>
-</head>
-<body>
-    <div class="general">
-        <div class="container">
-            <!-- Add the left and right button -->
-            <div class="navigation">
-                <div class="prev nav-btn"><</div>
-                <div class="next nav-btn">></div>
-            </div>
-            <!-- Add the images -->
-            <div class="images">
-                <div class="image show">
-                    <img src="img/image1.jpg" alt="">
-                    <p class="name">Image 1</p>
-                    <button class="submit">Submit</button>
-                </div>
-                <div class="image">
-                    <img src="img/image2.jpg" alt="">
-                    <p class="name">Image 2</p>
-                    <button class="submit">Submit</button>
-                </div>
-                <div class="image">
-                    <img src="img/image4.jpg" alt="">
-                    <p class="name">Image 4</p>
-                    <button class="submit">Submit</button>
-                </div>
-            </div>
-        </div>
-        <div class="container 2">
-                <!-- Add the left and right button -->
-                <div class="navigation2">
-                    <div class="prev2 nav-btn2"><</div>
-                    <div class="next2 nav-btn2">></div>
-                </div>
-                <!-- Add the images -->
-                <div class="images2">
-                    <div class="image2 show2">
-                        <img src="img/image1.jpg" alt="">
-                        <p class="name2">Image 1</p>
-                        <button class="submit2">Submit</button>
-                    </div>
-                    <div class="image2">
-                        <img src="img/image2.jpg" alt="">
-                        <p class="name2">Image 2</p>
-                        <button class="submit2">Submit</button>
-                    </div>
-                    <div class="image2">
-                        <img src="img/image4.jpg" alt="">
-                        <p class="name2">Image 4</p>
-                        <button class="submit2">Submit</button>
-                    </div>
-                </div>
-        </div>
+  </head>
+  <body>
+    <!-- This is the top section of the app -->
+    <div class="top">
+      <p>Pick the fastest animal</p>
     </div>
-    
+
+    <!-- This is the middle section of the app -->
+    <div class="container">
+      <!-- This is the left section  -->
+      <div class="left field">
+        <div class="up">
+          <p>Bird</p>
+        </div>
+        <div class="mid">
+          <img src="img/image1.jpg" alt="" />
+        </div>
+        <div class="down"><button>Submit</button></div>
+      </div>
+
+      <!-- This is the center section  -->
+      <div class="center">
+        <p>Score:0</p>
+        <button class="next">Next</button>
+      </div>
+
+      <!-- This is the right section -->
+      <div class="right field">
+        <div class="up">
+            <p>Hen</p>
+          </div>
+          <div class="mid">
+            <img src="img/image2.jpg" alt="" />
+          </div>
+          <div class="down"><button>Submit</button></div>
+      </div>
+    </div>
+
+    <!-- This is the bottom section of the app -->
+    <div class="buttom">
+      <p>The human body has 206 bones</p>
+    </div>
+
     <script src="main.js"></script>
-</body>
+  </body>
 </html>
-
-
