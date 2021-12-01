@@ -5,17 +5,49 @@ let point = document.querySelector(".point");
 let index = 0;
 let score = 0;
 
-let question = 1;
-console.log(question);
-document.querySelector(".submit").addEventListener('click',function(){
-    console.log("this is the right answer");
-    score++
-    document.querySelector(".container").style.backgroundColor = "#60b347"
-    document.querySelector(".score").textContent = score;
-})
-document.querySelector(".submit2").addEventListener('click',function(){
+number = Math.floor(Math.random() * 3);
+console.log(number);
+
+let arr = [{
+    "name": "bird",
+    "image": "img/image1.jpg",
+    "speed": 200
+},
+{
+    "name": "hen",
+    "image": "img/image2.jpg",
+    "speed": 230
+}, {
+    "name": "goat",
+    "image": "img/image4.jpg",
+    "speed": 250
+}];
+
+console.log(arr[number])
+
+
+
+if (question = 1) {
+    let question = 1;
+    document.querySelector(".submit").addEventListener('click', function () {
+        console.log("this is the right answer");
+        score++
+        document.querySelector(".container").style.backgroundColor = "#60b347"
+        document.querySelector(".score").textContent = score;
+        document.querySelector(".information").textContent = "The golden eagle is faster"
+        question++;
+    })
+}
+
+
+document.querySelector(".submit2").addEventListener('click', function () {
     console.log("this is the wrong answer");
+    document.querySelector(".container").style.backgroundColor = "red"
+    document.querySelector(".score").textContent = score;
+    document.querySelector(".information").textContent = "The is slower than the golden eagle"
 })
+
+
 
 // // //
 
