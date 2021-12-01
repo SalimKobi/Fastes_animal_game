@@ -1,27 +1,59 @@
 // Parameters for the left section of the app
 // const images = document.querySelector(".images").children;
 
+
+
 let point = document.querySelector(".point");
 let index = 0;
 let score = 0;
 
-number = Math.floor(Math.random() * 3);
+number = Math.floor(Math.random() * 10);
 console.log(number);
 
 let arr = [{
-    "name": "bird",
-    "image": "img/image1.jpg",
-    "speed": 200
+    "name": "Peregrine falcon",
+    "image": "img/peregrine_falcon.jpg",
+    "speed": 350
 },
 {
-    "name": "hen",
-    "image": "img/image2.jpg",
-    "speed": 230
+    "name": "Golden eagle",
+    "image": "img/golden_eagle.jpg",
+    "speed": 240
 }, {
-    "name": "goat",
-    "image": "img/image4.jpg",
-    "speed": 250
+    "name": "Pigeon",
+    "image": "img/pigeon.jpg",
+    "speed": 140
+
+}, {
+    "name": "Cheetah",
+    "image": "img/cheetah.jpg",
+    "speed": 120
+}, {
+    "name": "Pronghorn",
+    "image": "img/pronghorn.jpg",
+    "speed": 98
+}, {
+    "name": "Springbok",
+    "image": "img/springbok.jpg",
+    "speed": 88
+
+}, {
+    "name": "Lion",
+    "image": "img/lion.jpg",
+    "speed": 81
+}, {
+    "name": "Wildebeest",
+    "image": "img/wildbeest.jpg",
+    "speed": 80
+}, {
+    "name": "Wild Dog",
+    "image": "img/wild_dog.jpg",
+    "speed": 71
 }];
+
+document.querySelector(".name").textContent = arr[0].name
+document.querySelector(".image").src = arr[8].image
+
 
 console.log(arr[number])
 
