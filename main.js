@@ -1,22 +1,21 @@
-// // Parameters for the left section of the app
-// const prev = document.querySelector(".prev");
-// const next = document.querySelector(".next");
+// Parameters for the left section of the app
 // const images = document.querySelector(".images").children;
-// const submit = document.querySelector(".submit")
-// const submit2 = document.querySelector(".submit2")
-// let result = document.querySelectorAll(".name");
-// // let score = document.querySelector(".score").textContent
-// const totalImages = images.length;
-// let index = 0;
 
+let point = document.querySelector(".point");
+let index = 0;
+let score = 0;
 
-
-
-// question = 1;
-
-// if (submit){
-// }
-
+let question = 1;
+console.log(question);
+document.querySelector(".submit").addEventListener('click',function(){
+    console.log("this is the right answer");
+    score++
+    document.querySelector(".container").style.backgroundColor = "#60b347"
+    document.querySelector(".score").textContent = score;
+})
+document.querySelector(".submit2").addEventListener('click',function(){
+    console.log("this is the wrong answer");
+})
 
 // // //
 
