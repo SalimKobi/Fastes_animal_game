@@ -1,14 +1,8 @@
 // Parameters for the left section of the app
+let point = document.querySelector(".point");
+let score = 0;
 // const images = document.querySelector(".images").children;
 
-
-
-let point = document.querySelector(".point");
-let index = 0;
-let score = 0;
-
-number = Math.floor(Math.random() * 10);
-console.log(number);
 
 let arr = [{
     "name": "Peregrine falcon",
@@ -51,33 +45,65 @@ let arr = [{
     "speed": 71
 }];
 
-document.querySelector(".name").textContent = arr[0].name
-document.querySelector(".image").src = arr[8].image
+// Generate randon numbers for the left and right images 
+numberLeft = Math.floor(Math.random() * 10);
+numberRight = Math.floor(Math.random() * 10);
 
-
-console.log(arr[number])
-
-
-
-if (question = 1) {
-    let question = 1;
-    document.querySelector(".submit").addEventListener('click', function () {
-        console.log("this is the right answer");
-        score++
-        document.querySelector(".container").style.backgroundColor = "#60b347"
-        document.querySelector(".score").textContent = score;
-        document.querySelector(".information").textContent = "The golden eagle is faster"
-        question++;
+//Adding actions if the user clicks on the first button
+document.querySelector(".submit").addEventListener('click', function () {
+    document.querySelector(".submit2").addEventListener('click', function(){
+        console.log("ibrahim salim kobi is the best developer in kippa")
     })
-}
+    document.querySelector(".submit2").disable = true;
+    if(arr[numberLeft].speed > arr[numberRight].speed){
+        document.querySelector(".container").style.backgroundColor = "#60b347";
+        score++;
+        document.querySelector(".score").textContent = score;
 
-
-document.querySelector(".submit2").addEventListener('click', function () {
-    console.log("this is the wrong answer");
-    document.querySelector(".container").style.backgroundColor = "red"
-    document.querySelector(".score").textContent = score;
-    document.querySelector(".information").textContent = "The is slower than the golden eagle"
+    }else{
+        document.querySelector(".container").style.backgroundColor = "red";
+    }
 })
+
+
+
+
+
+
+
+
+
+        document.querySelector(".name").textContent = arr[numberLeft].name
+        document.querySelector(".image").src = arr[numberLeft].image
+        // console.log(numberLeft)
+ 
+
+document.querySelector(".image2").src = arr[numberRight].image
+
+
+
+
+//CONSULT THIS TO BUILD LOGIC CONSULT THIS TO BUILD LOGIC CONSULT THIS TO BUILD LOGIC CONSULT THIS TO BUILD LOGIC CONSULT THIS TO BUILD LOGIC CONSULT THIS TO BUILD LOGIC
+// if (question = 1) {
+//     let question = 1;
+//     document.querySelector(".submit").addEventListener('click', function () {
+//         console.log("this is the right answer");
+//         score++
+//         document.querySelector(".container").style.backgroundColor = "#60b347"
+//         document.querySelector(".score").textContent = score;
+//         document.querySelector(".information").textContent = "The golden eagle is faster"
+//         question++;
+//     })
+// }
+
+
+// document.querySelector(".submit2").addEventListener('click', function () {
+//     console.log("this is the wrong answer");
+//     document.querySelector(".container").style.backgroundColor = "red"
+//     document.querySelector(".score").textContent = score;
+//     document.querySelector(".information").textContent = "The is slower than the golden eagle"
+// })
+// CONSULT THIS TO BUILD LOGIC CONSULT THIS TO BUILD LOGIC CONSULT THIS TO BUILD LOGIC CONSULT THIS TO BUILD LOGIC CONSULT THIS TO BUILD LOGIC 
 
 
 
