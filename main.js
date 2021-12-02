@@ -1,4 +1,6 @@
 // Parameters for the left section of the app
+document.querySelector(".submit2").disable = true;
+document.querySelector(".information").textContent = "Let's get started"
 let point = document.querySelector(".point");
 let score = 0;
 // const images = document.querySelector(".images").children;
@@ -45,40 +47,74 @@ let arr = [{
     "speed": 71
 }];
 
+
+// 
+function getRand() {
+    let min = 0;
+    let max = arr.length;
+    let rand = Math.floor(Math.random() * (max - min) + min);
+    return rand;
+}
+
 // Generate randon numbers for the left and right images 
-numberLeft = Math.floor(Math.random() * 10);
-numberRight = Math.floor(Math.random() * 10);
+numberLeft = getRand();
+numberRight = getRand();
 
-//Adding actions if the user clicks on the first button
-document.querySelector(".submit").addEventListener('click', function () {
-    document.querySelector(".submit2").addEventListener('click', function(){
-        console.log("ibrahim salim kobi is the best developer in kippa")
+
+
+if (numberLeft !== numberRight) {
+    //Genrating randon images 
+    document.querySelector(".image").src = arr[numberLeft].image
+    document.querySelector(".name").textContent = arr[numberLeft].name
+    document.querySelector(".image2").src = arr[numberRight].image
+    document.querySelector(".name2").textContent = arr[numberRight].name
+    //Adding actions if the user clicks on the first button
+    document.querySelector(".submit").addEventListener('click', function () {
+       
+        if (arr[numberLeft].speed > arr[numberRight].speed) {
+            document.querySelector(".container").style.backgroundColor = "#60b347";
+            score++;
+            document.querySelector(".score").textContent = score;
+
+        } else {
+            document.querySelector(".container").style.backgroundColor = "red";
+        }
     })
-    document.querySelector(".submit2").disable = true;
-    if(arr[numberLeft].speed > arr[numberRight].speed){
-        document.querySelector(".container").style.backgroundColor = "#60b347";
-        score++;
-        document.querySelector(".score").textContent = score;
 
-    }else{
-        document.querySelector(".container").style.backgroundColor = "red";
-    }
-})
+    //Adding actions if the user clicks on the first button
+    document.querySelector(".submit2").addEventListener('click', function () {
 
+        if (arr[numberRight].speed > arr[numberLeft].speed) {
+            document.querySelector(".container").style.backgroundColor = "#60b347";
+            score++;
+            document.querySelector(".score").textContent = score;
 
-
-
-
+        } else {
+            document.querySelector(".container").style.backgroundColor = "red";
+        }
+    })
 
 
+}
 
 
-        document.querySelector(".name").textContent = arr[numberLeft].name
-        document.querySelector(".image").src = arr[numberLeft].image
+
+
+
+
+
+
+
+
+
+
+
+        // document.querySelector(".name").textContent = arr[numberLeft].name
+
         // console.log(numberLeft)
- 
 
-document.querySelector(".image2").src = arr[numberRight].image
+
+
 
 
 
