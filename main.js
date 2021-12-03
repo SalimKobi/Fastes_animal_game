@@ -1,6 +1,48 @@
 // Parameters for the left section of the app
-document.querySelector(".submit2").disable = true;
+document.querySelector(".submit2")
 document.querySelector(".information").textContent = "Let's get started"
+document.querySelector(".next").classList.add("display");
+
+
+
+function displayNext() {
+    const nextButton = document.querySelector(".next");
+    nextButton.classList.remove("display");
+    // nextButton.addEventListener('click', function() {
+    //     console.log('clicked')
+    //     Next
+    // }); 
+    nextButton.addEventListener('click', Next);
+
+
+};
+
+// functions that disables buttons 
+
+//disable the right button
+function disablebtn() {
+    document.querySelector(".submit2").disabled = true;
+    document.querySelector(".next").style.backgroundColor = "#71797E";
+}
+//disable the left button
+function disablebtn2() {
+    document.querySelector(".submit").disabled = true;
+    document.querySelector(".next").style.backgroundColor = "#71797E";
+}
+
+//disable the two buttons 
+function disableAllbtn() {
+    document.querySelector(".submit2").disabled = true;
+    document.querySelector(".submit").disabled = true;
+}
+
+//enable the two buttons 
+function enableAllbtns(){
+    document.querySelector(".submit2").disabled = false;
+    document.querySelector(".submit").disabled = false;
+    document.querySelector(".container").style.backgroundColor = "grey";
+}
+
 let point = document.querySelector(".point");
 let score = 0;
 // const images = document.querySelector(".images").children;
@@ -57,45 +99,61 @@ function getRand() {
 }
 
 // Generate randon numbers for the left and right images 
-numberLeft = getRand();
-numberRight = getRand();
+// numberLeft = getRand();
+// numberRight = getRand();
+
+function Next() {
+    console.log('Next invoked');
+    numberLeft = getRand();
+    numberRight = getRand();
+
+    if (numberLeft !== numberRight) {
+        //Genrating randon images 
+        document.querySelector(".image").src = arr[numberLeft].image
+        document.querySelector(".name").textContent = arr[numberLeft].name
+        document.querySelector(".image2").src = arr[numberRight].image
+        document.querySelector(".name2").textContent = arr[numberRight].name
+        //Adding actions if the user clicks on the first button
+        document.querySelector(".submit").addEventListener('click', function () {
+            disableAllbtn();
+            displayNext()
+            if (arr[numberLeft].speed > arr[numberRight].speed) {
+                document.querySelector(".container").style.backgroundColor = "#60b347";
+                score++;
+                document.querySelector(".score").textContent = score;
+
+            } else {
+                document.querySelector(".container").style.backgroundColor = "red";
+            }
+        })
+
+        //Adding actions if the user clicks on the first button
+        document.querySelector(".submit2").addEventListener('click', function () {
+            disableAllbtn();
+            displayNext()
+            if (arr[numberRight].speed > arr[numberLeft].speed) {
+                document.querySelector(".container").style.backgroundColor = "#60b347";
+                score++;
+                document.querySelector(".score").textContent = score;
+
+            } else {
+                document.querySelector(".container").style.backgroundColor = "red";
+            }
+        })
 
 
+    }
 
-if (numberLeft !== numberRight) {
-    //Genrating randon images 
-    document.querySelector(".image").src = arr[numberLeft].image
-    document.querySelector(".name").textContent = arr[numberLeft].name
-    document.querySelector(".image2").src = arr[numberRight].image
-    document.querySelector(".name2").textContent = arr[numberRight].name
-    //Adding actions if the user clicks on the first button
-    document.querySelector(".submit").addEventListener('click', function () {
-       
-        if (arr[numberLeft].speed > arr[numberRight].speed) {
-            document.querySelector(".container").style.backgroundColor = "#60b347";
-            score++;
-            document.querySelector(".score").textContent = score;
-
-        } else {
-            document.querySelector(".container").style.backgroundColor = "red";
-        }
-    })
-
-    //Adding actions if the user clicks on the first button
-    document.querySelector(".submit2").addEventListener('click', function () {
-
-        if (arr[numberRight].speed > arr[numberLeft].speed) {
-            document.querySelector(".container").style.backgroundColor = "#60b347";
-            score++;
-            document.querySelector(".score").textContent = score;
-
-        } else {
-            document.querySelector(".container").style.backgroundColor = "red";
-        }
-    })
-
-
+    document.querySelector(".next").classList.add("display");
+    enableAllbtns()
 }
+//TRIAL TRIAL TRIAL TRIAL TRIAL TRIAL TRIAL TRIAL
+
+Next();
+
+
+
+
 
 
 
