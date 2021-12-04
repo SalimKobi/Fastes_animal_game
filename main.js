@@ -8,13 +8,7 @@ document.querySelector(".next").classList.add("display");
 function displayNext() {
     const nextButton = document.querySelector(".next");
     nextButton.classList.remove("display");
-    // nextButton.addEventListener('click', function() {
-    //     console.log('clicked')
-    //     Next
-    // }); 
-    nextButton.addEventListener('click', Next);
-
-
+    nextButton.addEventListener('click', genrateNumImg);
 };
 
 // functions that disables buttons 
@@ -37,14 +31,14 @@ function disableAllbtn() {
 }
 
 //enable the two buttons 
-function enableAllbtns(){
+function enableAllbtns() {
     document.querySelector(".submit2").disabled = false;
     document.querySelector(".submit").disabled = false;
     document.querySelector(".container").style.backgroundColor = "grey";
 }
 
 let point = document.querySelector(".point");
-let score = 0;
+
 // const images = document.querySelector(".images").children;
 
 
@@ -102,10 +96,23 @@ function getRand() {
 // numberLeft = getRand();
 // numberRight = getRand();
 
-function Next() {
-    console.log('Next invoked');
+// function generating random numbers 
+// function generateNum(){
+//     numberLeft = getRand();
+//     numberRight = getRand();
+// }
+
+
+function genrateNumImg() {
+    document.querySelector(".next").classList.add("display");
+
     numberLeft = getRand();
     numberRight = getRand();
+
+    while (numberLeft === numberRight){
+        numberLeft = getRand();
+        numberRight = getRand();
+    }
 
     if (numberLeft !== numberRight) {
         //Genrating randon images 
@@ -113,7 +120,30 @@ function Next() {
         document.querySelector(".name").textContent = arr[numberLeft].name
         document.querySelector(".image2").src = arr[numberRight].image
         document.querySelector(".name2").textContent = arr[numberRight].name
-        //Adding actions if the user clicks on the first button
+        enableAllbtns()
+    }
+
+}
+
+
+function Next() {
+    console.log('Next invoked');
+    numberLeft = getRand();
+    numberRight = getRand();
+    let score = 0;
+
+    while (numberLeft === numberRight){
+        numberLeft = getRand();
+        numberRight = getRand();
+    }
+
+    if (numberLeft !== numberRight) {
+        //Genrating randon images 
+        document.querySelector(".image").src = arr[numberLeft].image
+        document.querySelector(".name").textContent = arr[numberLeft].name
+        document.querySelector(".image2").src = arr[numberRight].image
+        document.querySelector(".name2").textContent = arr[numberRight].name
+        // Adding actions if the user clicks on the first button
         document.querySelector(".submit").addEventListener('click', function () {
             disableAllbtn();
             displayNext()
@@ -139,17 +169,37 @@ function Next() {
             } else {
                 document.querySelector(".container").style.backgroundColor = "red";
             }
+            // console.log(score);
         })
-
+        // console.log(score);
 
     }
-
+    // document.querySelector(".score").textContent = score;
     document.querySelector(".next").classList.add("display");
     enableAllbtns()
+
 }
 //TRIAL TRIAL TRIAL TRIAL TRIAL TRIAL TRIAL TRIAL
 
 Next();
+
+// function getR() {
+//     let min = 0;
+//     let max = arr.length;
+//     let rand = Math.floor(Math.random() * (max - min) + min);
+//     return rand;
+// }
+// numberA = getR();
+// numberB = getR();
+
+// while (numberA === numberB) {
+//     numberA = getR();
+//     numberB = getR();
+
+// }
+// console.log(numberA)
+// console.log(numberB)
+
 
 
 
