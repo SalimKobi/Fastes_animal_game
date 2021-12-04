@@ -1,6 +1,6 @@
 // Parameters for the left section of the app
 document.querySelector(".submit2")
-document.querySelector(".information").textContent = "Let's get started"
+document.querySelector(".information").textContent = "Let's go!"
 document.querySelector(".next").classList.add("display");
 
 
@@ -104,12 +104,13 @@ function getRand() {
 
 
 function genrateNumImg() {
+    document.querySelector(".information").textContent = "Let's go!"
     document.querySelector(".next").classList.add("display");
 
     numberLeft = getRand();
     numberRight = getRand();
 
-    while (numberLeft === numberRight){
+    while (numberLeft === numberRight) {
         numberLeft = getRand();
         numberRight = getRand();
     }
@@ -132,7 +133,7 @@ function Next() {
     numberRight = getRand();
     let score = 0;
 
-    while (numberLeft === numberRight){
+    while (numberLeft === numberRight) {
         numberLeft = getRand();
         numberRight = getRand();
     }
@@ -151,9 +152,10 @@ function Next() {
                 document.querySelector(".container").style.backgroundColor = "#60b347";
                 score++;
                 document.querySelector(".score").textContent = score;
-
+                document.querySelector(".information").textContent = `The ${arr[numberLeft].name} moves at ${arr[numberLeft].speed}km/hr while the ${arr[numberRight].name} moves at ${arr[numberRight].speed}km/hr`
             } else {
                 document.querySelector(".container").style.backgroundColor = "red";
+                document.querySelector(".information").textContent = `The ${arr[numberLeft].name} moves at ${arr[numberLeft].speed}km/hr while the ${arr[numberRight].name} moves at ${arr[numberRight].speed}km/hr`
             }
         })
 
@@ -165,9 +167,11 @@ function Next() {
                 document.querySelector(".container").style.backgroundColor = "#60b347";
                 score++;
                 document.querySelector(".score").textContent = score;
+                document.querySelector(".information").textContent = `The ${arr[numberRight].name} moves at ${arr[numberRight].speed}km/hr while the ${arr[numberLeft].name} moves at ${arr[numberLeft].speed}km/hr`
 
             } else {
                 document.querySelector(".container").style.backgroundColor = "red";
+
             }
             // console.log(score);
         })
