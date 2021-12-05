@@ -113,4 +113,9 @@ img {
   font-weight: 700;
 }
 
+.time {
+    font-size: 2rem;
+    margin-left: 1.5rem;
+}
+
 /* Animations */
