@@ -171,6 +171,7 @@ function Next() {
 
             } else {
                 document.querySelector(".container").style.backgroundColor = "red";
+                document.querySelector(".information").textContent = `The ${arr[numberRight].name} moves at ${arr[numberRight].speed}km/hr while the ${arr[numberLeft].name} moves at ${arr[numberLeft].speed}km/hr`
 
             }
             // console.log(score);
