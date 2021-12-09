@@ -8,11 +8,13 @@ let attempt = 5
 
 function win() {
     document.querySelector(".container").style.backgroundColor = "#60b347";
+    document.querySelector(".information").textContent = "Kindly refresh to play again"
     document.querySelector(".playerStat").textContent = "Congratulations you won 🎉"
 }
 
 function lose() {
     document.querySelector(".container").style.backgroundColor = "red";
+    document.querySelector(".information").textContent = "Kindly refresh to play again"
     document.querySelector(".playerStat").textContent = "Sorry you lost 😢"
 }
 
