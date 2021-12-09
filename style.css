@@ -96,9 +96,9 @@ img {
   text-align: center;
 }
 .information {
-    padding-top: 2rem;
-    font-size: 2rem;
-    font-weight: 900;
+  padding-top: 2rem;
+  font-size: 2rem;
+  font-weight: 900;
 }
 
 /* Styling the next button */
@@ -114,8 +114,12 @@ img {
 }
 
 .time {
-    font-size: 2rem;
-    margin-left: 1.5rem;
+  font-size: 2rem;
+  margin-left: 1.5rem;
 }
 
-/* Animations */
+@media screen and (max-width: 949px) {
+  body {
+    display: none;
+  }
+}
