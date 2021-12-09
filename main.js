@@ -40,12 +40,14 @@ function displayNext() {
 //disable the right button
 function disablebtn() {
     document.querySelector(".submit2").disabled = true;
-    document.querySelector(".next").style.backgroundColor = "#71797E";
+    document.querySelector(".submit2").style.backgroundColor = "#71797E";
+    document.querySelector(".submit").style.backgroundColor = "#71797E";
 }
 //disable the left button
 function disablebtn2() {
     document.querySelector(".submit").disabled = true;
-    document.querySelector(".next").style.backgroundColor = "#71797E";
+    document.querySelector(".submit").style.backgroundColor = "#71797E";
+    document.querySelector(".submit2").style.backgroundColor = "#71797E";
 }
 
 //disable the two buttons 
@@ -126,6 +128,8 @@ function getRand() {
 
 
 function genrateNumImg() {
+    document.querySelector(".submit2").style.backgroundColor = "#111827";
+    document.querySelector(".submit").style.backgroundColor = "#111827";
     attempt--;
     document.querySelector(".information").textContent = `You have ${attempt} attempts remaining`
     document.querySelector(".next").classList.add("display");
