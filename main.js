@@ -1,29 +1,22 @@
 // Parameters for the left section of the app
 document.querySelector(".submit2")
-document.querySelector(".information").textContent = "Let's go!"
+document.querySelector(".information").textContent = "Score 5 points in 5 attempts to win!"
 document.querySelector(".next").classList.add("display");
 let clickNo = 0;
+let attempt = 5
 
 
-
-function youWon() {
+function win() {
     document.querySelector(".container").style.backgroundColor = "#60b347";
     document.querySelector(".playerStat").textContent = "Congratulations you won 🎉"
-    document.querySelector(".playerStat").style.color = "white"
-    document.querySelector(".playerStat").style.fontSize = "5rem"
-    document.querySelector(".image").classList.add("display");
-    document.querySelector(".image2").classList.add("display");
-    document.querySelector(".submit2").classList.add("display");
-    document.querySelector(".submit").classList.add("display");
-    document.querySelector(".name").classList.add("display");
-    document.querySelector(".name2").classList.add("display");
-    document.querySelector(".points").classList.add("display");
-    document.querySelector(".next").classList.add("display");
 }
 
-function youLost() {
+function lose() {
     document.querySelector(".container").style.backgroundColor = "red";
     document.querySelector(".playerStat").textContent = "Sorry you lost 😢"
+}
+
+function WinOrLose() {
     document.querySelector(".playerStat").style.color = "white"
     document.querySelector(".playerStat").style.fontSize = "5rem"
     document.querySelector(".image").classList.add("display");
@@ -42,7 +35,7 @@ function displayNext() {
     nextButton.addEventListener('click', genrateNumImg);
 };
 
-// functions that disables buttons 
+// Functions that disables buttons 
 
 //disable the right button
 function disablebtn() {
@@ -105,13 +98,9 @@ let arr = [{
     "image": "img/lion.jpg",
     "speed": 81
 }, {
-    "name": "Wildebeest",
-    "image": "img/wildbeest.jpg",
-    "speed": 80
-}, {
-    "name": "Wild Dog",
+    "name": "Wolf",
     "image": "img/wild_dog.jpg",
-    "speed": 71
+    "speed": 60
 }, {
     "name": "Ostritch",
     "image": "img/ostritch.jpg",
@@ -137,9 +126,9 @@ function getRand() {
 
 
 function genrateNumImg() {
-    document.querySelector(".information").textContent = "Let's go!"
+    attempt--;
+    document.querySelector(".information").textContent = `You have ${attempt} attempts remaining`
     document.querySelector(".next").classList.add("display");
-
     numberLeft = getRand();
     numberRight = getRand();
 
@@ -188,9 +177,11 @@ function Next() {
                 if (clickNo === 5) {
                     console.log("click is up to 5")
                     if (score > 4) {
-                        youWon()
+                        WinOrLose()
+                        win()
                     } else {
-                        youLost()
+                        WinOrLose()
+                        lose()
                         console.log("you lost")
                     }
                 } else {
@@ -201,14 +192,15 @@ function Next() {
             } else {
                 if (clickNo === 5) {
                     console.log("click is up to 5")
-                    youLost()
+                    WinOrLose()
+                    lose()
                 } else {
                     document.querySelector(".container").style.backgroundColor = "red";
                     document.querySelector(".information").textContent = `The ${arr[numberLeft].name} moves at ${arr[numberLeft].speed}km/hr while the ${arr[numberRight].name} moves at ${arr[numberRight].speed}km/hr`
                 }
 
             }
-            // console.log(score);
+
         })
 
         //Adding actions if the user clicks on the first button
@@ -222,9 +214,11 @@ function Next() {
                 if (clickNo === 5) {
                     console.log("click is up to 5")
                     if (score > 4) {
-                        youWon()
+                        WinOrLose()
+                        win()
                     } else {
-                        youLost()
+                        lose()
+                        WinOrLose
                         console.log("you lost")
                     }
                 } else {
@@ -235,7 +229,8 @@ function Next() {
             } else {
                 if (clickNo === 5) {
                     console.log("click is up to 5")
-                    youLost()
+                    lose()
+                    WinOrLose()
                 } else {
                     document.querySelector(".container").style.backgroundColor = "red";
                     document.querySelector(".information").textContent = `The ${arr[numberRight].name} moves at ${arr[numberRight].speed}km/hr while the ${arr[numberLeft].name} moves at ${arr[numberLeft].speed}km/hr`
